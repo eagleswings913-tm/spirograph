@@ -6,6 +6,7 @@ turtle.colormode(255)
 t = turtle.Turtle()
 t.speed("fastest")
 t.shape("turtle")
+t.hideturtle()
 
 def random_color():
     r = random.randint(0, 255)
@@ -15,19 +16,22 @@ def random_color():
     return color
 
 for a in range(0, 360, 3):
+    t.setheading(a)
+    t.penup()
+    t.forward(200)
+    t.pendown()
     t.pencolor(random_color())
     t.circle(100)
-    t.setheading(a)
+    t.penup()
+    t.goto(0,0)
 
-# for a in range(0, 360, 3):
-#     t.pencolor(random_color())
-#     t.penup()
-#     t.forward(200)
-#     t.pendown()
-#     t.circle(100)
-#     t.penup()
-#     t.backward(200)
-#     t.setheading(a)
+
+
+for a in range(0, 360, 3):
+    t.pendown()
+    t.setheading(a)
+    t.pencolor(random_color())
+    t.circle(60)
 
 
 screen = turtle.Screen()
